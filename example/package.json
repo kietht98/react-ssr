@@ -1,0 +1,31 @@
+{
+  "name": "react-lazy-ssr-example",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development node src/server/index.js",
+    "dev": "NODE_ENV=development npm run build-dev && npm start",
+    "build": "NODE_ENV=production npm run build:all",
+    "build-dev": "NODE_ENV=development npm run build:all",
+    "build:all": "npm run build:clean && npm run build:client",
+    "build:clean": "rm -rf ./build",
+    "build:client": "webpack"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "react": "~16.9.0",
+    "react-async-ssr": "^0.5.4",
+    "react-dom": "~16.9.0",
+    "react-lazy-ssr": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
